@@ -465,7 +465,7 @@ void sendSensor()
   phValue = measure_ph();
   Serial.println(phValue);
   // Xuất giá trị cảm biến ra lcd
-  display_lcd(t, h, phValue, float_sensor_bool, photoresistor_bool);
+  //display_lcd(t, h, phValue, float_sensor_bool, photoresistor_bool);
 
   if (isnan(h) || isnan(t)) 
   {
@@ -781,7 +781,7 @@ void setup() {
   Serial.print("Gateway: ");
   Serial.println(WiFi.gatewayIP());
   Blynk.begin(auth, ssid, password, IPAddress(192,168,1,11),8080);
-  timer.setInterval(5000L, sendSensor);
+  timer.setInterval(1000L, sendSensor);
   timer.setInterval(5000L, datevalue);
   timer.setInterval(5000L, send_data_to_googlesheet);
   timer.setInterval(5000L, send_data_to_webserver);
