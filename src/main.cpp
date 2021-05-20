@@ -433,7 +433,7 @@ float measure_ph()
   float pHVol = (float)avgValue*  3.3 / 1024 / 6;
   //float phValue = 14* pHVol/3.3;
   //float phValue = 4.97*pHVol - 1.24;
-  float phValue = 4.25715*pHVol - 0.78549;
+  float phValue = 14*pHVol/3.3;
   return phValue;
 }
 void display_lcd(float t, float h, float phValue, int float_sensor, int photoresistor )
@@ -551,9 +551,8 @@ void send_data_to_googlesheet() {
      h = 1000;
       //return;
   }
-  //https://script.google.com/macros/s/AKfycbywGIJQEbRYQUY7ROeF7jTHdO91HbiNHAQtq9qYDGLn5-obhTZjYQPcJT-oLv0X7_m8/exec
-  //https://script.google.com/macros/s/AKfycbxuqxXnLdb34Pg4a_ie1MaYWhHWXZNo1l_VubxRnFw9MPrP-lp5o0PHhZ7pv7GV3ktv/exec
-  //https://script.google.com/macros/s/AKfycbzjy0mwez0NApENozEMBG96-kX9C8ihkYouLMSF8o3PRXZQ-5fiBbi7qzRBeOsc3A/exec
+  
+  
   url = "/macros/s/AKfycbywGIJQEbRYQUY7ROeF7jTHdO91HbiNHAQtq9qYDGLn5-obhTZjYQPcJT-oLv0X7_m8/exec?value1="+ String(t)+
         "&value2=" + String(h) + "&value3=" + String(phValue) + "&value4=" + String(test_value)
         + "&value5=" + String(pred_value) + "&value6=" + String(mae) + "&value7=" + status_pH_sensor;
